@@ -12,6 +12,11 @@
   padding: 0 24px;
   z-index: 100;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.header.sidebar-collapsed {
+  left: 60px;
 }
 
 .header-left {
@@ -128,6 +133,24 @@
 
 .logout-btn:hover {
   color: var(--error-red);
+}
+
+.toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border: none;
+  background: none;
+  color: var(--text-light);
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.toggle-btn:hover {
+  background-color: var(--primary-blue);
+  color: white;
 }
 
 @media (max-width: 768px) {

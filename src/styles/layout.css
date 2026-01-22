@@ -11,6 +11,15 @@
   padding: 30px;
   overflow-y: auto;
   background-color: var(--light-gray);
+  transition: all 0.3s ease;
+}
+
+.main-content.sidebar-open {
+  margin-left: 260px;
+}
+
+.main-content.sidebar-closed {
+  margin-left: 60px;
 }
 
 .page-header {
@@ -67,6 +76,48 @@
   padding: 20px;
   border: 1px solid var(--border-color);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transform: translateY(0);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.stat-card:hover::before {
+  transform: translateX(100%);
+  transition: transform 0.6s ease;
+}
+
+.stat-card.blue:hover {
+  border-left: 3px solid var(--primary-blue);
+}
+
+.stat-card.green:hover {
+  border-left: 3px solid var(--success-green);
+}
+
+.stat-card.orange:hover {
+  border-left: 3px solid var(--warning-orange);
+}
+
+.stat-card.red:hover {
+  border-left: 3px solid var(--error-red);
 }
 
 .stat-card h4 {

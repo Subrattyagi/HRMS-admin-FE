@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { LayoutDashboard, Clock, Users, Calendar, DollarSign, BarChart3, Settings, Building2, Cog, Plus, List } from 'lucide-react'
 import '../styles/sidebar.css'
 
-export default function Sidebar({ auth }) {
+export default function Sidebar({ auth, isOpen }) {
   const location = useLocation()
 
   const adminMenuItems = [
@@ -38,7 +38,7 @@ export default function Sidebar({ auth }) {
   const isActive = (path) => location.pathname === path
 
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${isOpen ? '' : 'collapsed'}`}>
       <div className="sidebar-logo">
         <h2>FrosTrek</h2>
         <p>AI</p>

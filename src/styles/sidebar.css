@@ -8,6 +8,34 @@
   position: fixed;
   left: 0;
   top: 0;
+  transition: all 0.3s ease;
+}
+
+.sidebar.collapsed {
+  width: 60px;
+}
+
+.sidebar.collapsed .sidebar-logo h2,
+.sidebar.collapsed .sidebar-logo p,
+.sidebar.collapsed .menu-item span {
+  display: none;
+}
+
+.sidebar.collapsed .menu-item {
+  justify-content: center;
+  padding: 15px;
+}
+
+.sidebar.collapsed .menu-group-label {
+  display: none;
+}
+
+.sidebar.collapsed .submenu-item {
+  display: none;
+}
+
+.sidebar.collapsed .menu-item svg {
+  margin-right: 0;
 }
 
 .sidebar-logo {

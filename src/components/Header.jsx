@@ -5,7 +5,9 @@ import { Clock, Bell, LogOut } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import '../styles/header.css'
 
-export default function Header({ auth, setAuth }) {
+import { Menu } from 'lucide-react'
+
+export default function Header({ auth, setAuth, toggleSidebar, sidebarOpen }) {
   const navigate = useNavigate()
 
 
@@ -16,13 +18,16 @@ export default function Header({ auth, setAuth }) {
   }
 
   return (
-    <header className="header">
+    <header className={`header ${sidebarOpen ? '' : 'sidebar-collapsed'}`}>
       <div className="header-left">
         <h1 className="page-title-small">Welcome back, Admin</h1>
       </div>
 
       <div className="header-right">
 
+        <button className="icon-btn toggle-btn" onClick={toggleSidebar}>
+          <Menu size={20} />
+        </button>
 
         <button className="icon-btn notification-btn">
           <Bell size={20} />
