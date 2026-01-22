@@ -15,7 +15,7 @@ export default function Dashboard() {
   useEffect(() => {
     const fetchRecentActivity = async () => {
       try {
-        const response = await fetch('http://localhost:9000/api/attendance/recent?limit=10');
+        const response = await fetch('https://hrms-backend-eta.vercel.app/api/attendance/recent?limit=10');
         const result = await response.json();
 
         if (result.success) {
